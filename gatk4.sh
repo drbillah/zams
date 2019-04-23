@@ -37,7 +37,7 @@ threshold=2000000000
 refsize=$(wc -c < $ref)
 
 if [ $refsize -ge $threshold ]; then
-    echo `${bwa} index -p index/ref -a $bigRef `
+    echo `${bwa} index -p index/ref -a $bigRef $ref`
 else
     echo `${bwa} index -p index/ref -a $smallRef $ref`
 fi

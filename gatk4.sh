@@ -47,4 +47,3 @@ echo `${gatk4} --java-options "-Xmx1G" SortSam -I $sample.bam -O $sample.sorted.
 echo `${gatk4} --java-options "-Xmx1G" MarkDuplicates -I $sample.sorted.bam -O $sample.dedup.bam -M $sample.metrics --REMOVE_DUPLICATES true --CREATE_INDEX true`
 echo `rm -rf $sample.bam $sample.sorted.bam $sample.sorted.bai`
 echo `${gatk4} --java-options "-Xmx1G" HaplotypeCaller -R $ref -I $sample.dedup.bam -O gatk4.raw.vcf`
-echo $dir
